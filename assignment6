@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic HTML with JavaScript</title>
+    <style>
+        /* Some basic styles */
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .dynamic-text {
+            color: blue;
+        }
+        .hidden {
+            display: none;
+        }
+        .highlight {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Interactive Web Page with JavaScript</h1>
+    </header>
+
+    <section>
+        <p>This is a sample webpage where JavaScript dynamically changes content and styles.</p>
+    </section>
+
+    <section>
+        <button id="changeTextBtn">Change Text</button>
+        <button id="toggleElementBtn">Toggle Element Visibility</button>
+        <button id="highlightTextBtn">Highlight Text</button>
+    </section>
+
+    <section id="dynamicSection">
+        <p id="dynamicText" class="dynamic-text">This text will change when you click the "Change Text" button.</p>
+    </section>
+
+    <section id="hiddenSection" class="hidden">
+        <p>This is a hidden section that can be toggled visible or invisible.</p>
+    </section>
+
+    <footer>
+        <p>© 2025 Dynamic Webpage Example</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+// JavaScript to interact with HTML elements
+
+// Change the text content dynamically
+document.getElementById('changeTextBtn').addEventListener('click', function() {
+    const dynamicText = document.getElementById('dynamicText');
+    dynamicText.textContent = "The text has been updated dynamically!";
+});
+
+// Modify CSS styles via JavaScript
+document.getElementById('highlightTextBtn').addEventListener('click', function() {
+    const dynamicText = document.getElementById('dynamicText');
+    dynamicText.classList.toggle('highlight');  // Toggles the highlight class
+});
+
+// Add or remove an element when a button is clicked
+document.getElementById('toggleElementBtn').addEventListener('click', function() {
+    const hiddenSection = document.getElementById('hiddenSection');
+    hiddenSection.classList.toggle('hidden');  // Toggles the visibility of the hidden section
+});
